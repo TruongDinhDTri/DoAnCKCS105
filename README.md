@@ -5,10 +5,10 @@
 <h1 align="center"> Đồ họa máy tính </h1>
 
 # Giới thiệu môn học
-* **Tên môn học** : Đồ họa máy tính 
+* **Tên môn học**: Đồ họa máy tính 
 * **Giảng viên**: Cáp Phạm Đình Thăng
 * **Mã môn học**: CS105
-* **Mã lớp**:CS105.M11.KHCL
+* **Mã lớp**: CS105.M11.KHCL
 
 # Thành viên nhóm 
 | STT | MSSV | Họ và tên           | Email | Github |
