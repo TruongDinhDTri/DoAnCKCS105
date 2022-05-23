@@ -1,33 +1,33 @@
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/79885974/169676567-7b84410a-91ef-4080-8d34-59a86c2ec758.png">
+<p align ='center'>
+<img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
 </p>
-<h1 align="center"> Đồ họa máy tính </h1>
 
-# Giới thiệu môn học
-* **Tên môn học**: Đồ họa máy tính 
-* **Giảng viên**: Cáp Phạm Đình Thăng
-* **Mã môn học**: CS105
-* **Mã lớp**: CS105.M11.KHCL
+<h1 align ='center' style = 'color:red;'> <b> Đồ họa máy tính </b></h1>
 
-# Thành viên nhóm 
-| STT | MSSV | Họ và tên           | Email | Github |
-|-----|------|---------------------|-------|--------|
-| 1   |      | Trương Đình Đức Trí |       |        |
-| 2   |      | Trần Trung Tín      |       |        |
-| 3   |      | Hồ Thịn             |       |        |
-| 4   |      | Thoa                |       |        |
+## GIỚI THIỆU MÔN HỌC
 
-# Thông tin đồ án 
-* ***Tên đồ án***: Mô phỏng hình ảnh 3D
-* ***Các bước chạy chương trình***: 
+* **Tên môn học:** Đồ họa máy tính
+* **Mã môn học:** CS105
+* **Mã lớp:** CS105.M11.KHCL
+* **Giảng viên:** Cáp Phạm Đình Thăng
+
+## Thành viên
+
+| STT | MSSV       |Họ và tên       | Email                |Github                                   |
+| ----|:----------:|----------------|----------------------|-----------------------------------------|
+| 1   | 19521622   | Nguyễn Quan Huy|19521622@gm.uit.edu.vn|[nqhuy2509](https://github.com/nqhuy2509)|
+
+## Thông tin đồ án
+
+* ***Tên đồ án:*** Mô phỏng hình học 3D
+* ***Công cụ:*** Web brower
+* ***Các bước chạy chương trình***:
     - B1: Tải và giải nén thư mục
-    - B2: Mở folder trên các Editor (ví dụ VSCode)
+    - B2: Mở folder trên IDE (ví dụ VSCode)
     - B3: Chạy file index.html bằng browser(ví dụ live server của VSCode)
     - B4: Mở trình duyệt và thao tác trên trình duyệt
 
+* **Link github repository:** [link](https://github.com/nqhuy2509/DoanCKCS105)
+* **Link video demo:** [link](https://drive.google.com/file/d/1VAK-DcYg8tf7gHbkm1B6zGgsYWm7zYZA/view?usp=sharing)
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © Trương Đình Đức Trí`
-  
-
-
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © Nguyễn Quan Huy`
