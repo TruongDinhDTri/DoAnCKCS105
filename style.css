@@ -171,7 +171,18 @@ nav ul li a span {
     font-size: 22px;
     transition: transform 0.4s;
 }
+nav ul li .card-item .valueSpanFOV 
+{
+    margin: 0px 40px;
+}
 
+nav ul li .card-item .valueSpanNear {
+    margin: 0px 40px;
+}
+
+nav ul li .card-item .valueSpanFar {
+    margin: 0px 40px;
+}
 nav ul li a span.rotate {
     transform: translateY(-50%) rotate(-180deg);
 }
@@ -222,7 +233,7 @@ nav ul li a span.rotate {
     font-size: 20px;
     font-weight: bold;
     background-color: #ccc;
-    color: red;
+    color: rgb(143, 210, 76);
 }
 
 .card-body{
@@ -230,11 +241,12 @@ nav ul li a span.rotate {
 }
 
 .card-item{
-    margin: 10px 0;
+    margin: -10px 0;
 }
 
 .card-item span{
-    font-size: 15px;
+    font-size: 18px;
+    color:#fff;
 }
 .card-item input{
     display: block;
@@ -245,3 +257,5 @@ nav ul li a span.rotate {
     margin: 5px 0;
     cursor: pointer;
 }
+
+

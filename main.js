@@ -1,7 +1,9 @@
 import * as THREE from './js/three.module.js';
 import { OrbitControls } from './js/OrbitControls.js';
 import { TransformControls } from './js/TransformControls.js';
+// cần một cái thư viện
 import { TeapotBufferGeometry } from './js/TeapotBufferGeometry.js';
+import { GLTFLoader } from "https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/GLTFLoader.js";
 
 
 var camera,scene,renderer,control,orbit;
@@ -9,7 +11,7 @@ var mesh,texture;
 var raycaster, light, PointLightHelper, meshplan;
 var type_material = 3;
 
-var material = new THREE.MeshBasicMaterial({color: 0xf4efff});
+var material = new THREE.MeshBasicMaterial({color: 'teal'});
 material.needsUpdate = true;
 var mouse = new THREE.Vector2();
 
@@ -18,11 +20,10 @@ var BoxG = new THREE.BoxGeometry(30,30,30,40,40,40);
 var ShereG = new THREE.SphereGeometry(20,20,20);
 var ConeG = new THREE.ConeGeometry(18,30,32,20);
 var CylinderG = new THREE.CylinderGeometry(20,20,40,30,5);
-var TorusG = new THREE.TorusGeometry(20,5,20,100);
+var TorusG = new THREE.TorusGeometry(20, 5, 20, 100);
+// Tạo object mới từ thư viện đó
 var TeapotG = new TeapotBufferGeometry(20, 8);
-var IcosahedronG = new THREE.IcosahedronBufferGeometry(25);
-var OctahedronG = new THREE.OctahedronBufferGeometry(25);
-var TetrahedronG = new THREE.TetrahedronBufferGeometry(25);
+const loader = new GLTFLoader();
 
 init();
 render();
@@ -31,7 +32,19 @@ function init(){
 
     // Scene
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x343a40);
+    var reflectionCube = new THREE.CubeTextureLoader()
+            .setPath('./img/')
+            .load([
+                'ocean_ft.jpg',
+                'ocean_bk.jpg',
+                'ocean_up.jpg',
+                'ocean_dn.jpg',
+                'ocean_rt.jpg',
+                'ocean_lf.jpg',
+            ]);
+
+    reflectionCube.format = THREE.RGBFormat;
+    scene.background = reflectionCube;
 
     // Camera
     var camera_x = 1;
@@ -102,20 +115,20 @@ function SetMaterial(mat){
 
         switch (type_material){
             case 1:
-                material = new THREE.PointsMaterial({color: 0xffffff,size: 0.5});
+                material = new THREE.PointsMaterial({color: 0x343a40,size: 0.5});
                 mesh = new THREE.Points(dummy_mesh.geometry,material);
                 CloneMesh(dummy_mesh);
                 break;
             case 2:
-                material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
+                material = new THREE.MeshBasicMaterial({ color: 0x343a40, wireframe: true });
                 mesh = new THREE.Mesh(dummy_mesh.geometry, material);
                 CloneMesh(dummy_mesh);
                 break;
             case 3:
                 if (!light)
-                    material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+                    material = new THREE.MeshBasicMaterial({ color: 0x343a40 });
                 else
-                    material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+                    material = new THREE.MeshPhongMaterial({ color: 0x343a40 });
                 mesh = new THREE.Mesh(dummy_mesh.geometry, material);
                 CloneMesh(dummy_mesh);
                 break;
@@ -159,14 +172,12 @@ function addMesh(id){
             mesh = new THREE.Mesh(TeapotG, material);
             break;
         case 7:
-            mesh = new THREE.Mesh(IcosahedronG,material);
-            break;
-        case 8:
-            mesh = new THREE.Mesh(OctahedronG,material);
-            break;
-        case 9:
-            mesh = new THREE.Mesh(TetrahedronG,material);
-            break;
+            mesh = loader.load("./models/pickels/scene.gltf", function (gltf) {
+                mesh.scale.set(100, 100, 100);
+            });
+            
+
+            
     }
     mesh.name = "mesh1";
     mesh.castShadow = true;
@@ -260,14 +271,14 @@ function SetPointLight() {
             const planeSize = 400;
             const loader = new THREE.TextureLoader();
             const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
-            const planeMat = new THREE.MeshPhongMaterial({ side: THREE.DoubleSide, });
+            const planeMat = new THREE.MeshPhongMaterial({ map: loader.load('./img/plat2.jpeg') });
             meshplan = new THREE.Mesh(planeGeo, planeMat);
             meshplan.receiveShadow = true;
             meshplan.rotation.x = Math.PI * -.5;
             meshplan.position.y += 0.5;
             scene.add(meshplan);
         }
-        const color = '#FFFFFF';
+        const color = 'teal';
         const intensity = 2;
         light = new THREE.PointLight(color, intensity);
         light.castShadow = true;
@@ -352,13 +363,13 @@ function Animation1() {
     cancelAnimationFrame(id_animation1);
     var positionx = mesh.position.x;
     var positiony = mesh.position.y;
-    if (positiony < position_y + 30 && kt == 0) {
+    if (positiony < position_y + 50 && kt == 0) {
         mesh.position.y += 0.3;
     }
-    if (positiony > position_y + 30 && positionx < position_x + 30) {
+    if (positiony > position_y + 50 && positionx < position_x + 50) {
         mesh.position.x += 0.3;
     }
-    if (positiony > position_y + 30 && positionx > position_x + 30) kt += 1;
+    if (positiony > position_y + 50 && positionx > position_x + 50) kt += 1;
     if (kt > 1 && positiony > position_y) {
         mesh.position.y -= 0.3;
     }
@@ -378,11 +389,11 @@ function Animation2() {
     cancelAnimationFrame(id_animation1);
     cancelAnimationFrame(id_animation2);
     var positiony = mesh.position.y;
-    if (positiony < position_y + 30 && kt2 == 0) {
+    if (positiony < position_y + 50 && kt2 == 0) {
         mesh.position.y += 0.3;
         mesh.rotation.y += 0.05;
     }
-    if (positiony > position_y + 30) kt2 += 1;
+    if (positiony > position_y + 50) kt2 += 1;
     if (kt2 > 1 && positiony > position_y) {
         mesh.position.y -= 0.3;
         mesh.rotation.y += 0.05;
