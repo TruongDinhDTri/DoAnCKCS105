@@ -30,6 +30,9 @@ body{
     cursor: pointer;
     transition: left 0.4s ease;
 }
+nav ul li ul.text-show.show4 {
+    display: block;
+}
 
 
 
@@ -218,7 +221,7 @@ nav ul li a span.rotate {
 .ctrlpannel {
     position: absolute;
     top: 70px;
-    right: 0;background-color: #fff;
+    right: 0;background-color: rgb(10, 10, 10);
     border-radius: 10px;
     overflow: hidden;
     border: none;
@@ -232,12 +235,13 @@ nav ul li a span.rotate {
     border-bottom: 1px dotted #000;
     font-size: 20px;
     font-weight: bold;
-    background-color: #ccc;
-    color: rgb(143, 210, 76);
+    background-color: rgb(11, 10, 10);
+    color:cyan;
 }
 
 .card-body{
-    padding: 8px 16px;
+    padding: 8px 15px;
+    margin-bottom: 10px;
 }
 
 .card-item{
@@ -245,17 +249,20 @@ nav ul li a span.rotate {
 }
 
 .card-item span{
-    font-size: 18px;
-    color:#fff;
+    font-size: 15px;
+    color:cyan;
 }
 .card-item input{
     display: block;
     width: 100%;
-    background-color: #ddd;
+    background-color: rgb(15, 15, 15);
     border-radius: 10px;
     appearance: none;
     margin: 5px 0;
     cursor: pointer;
+    color: cyan;
 }
+
+
 
 

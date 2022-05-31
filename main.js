@@ -6,7 +6,7 @@ import { TeapotBufferGeometry } from './js/TeapotBufferGeometry.js';
 import { GLTFLoader } from "https://threejsfundamentals.org/threejs/resources/threejs/r127/examples/jsm/loaders/GLTFLoader.js";
 
 
-var camera,scene,renderer,control,orbit;
+var camera,scene,renderer,control,orbit,geometry;
 var mesh,texture;
 var raycaster, light, PointLightHelper, meshplan;
 var type_material = 3;
@@ -115,20 +115,20 @@ function SetMaterial(mat){
 
         switch (type_material){
             case 1:
-                material = new THREE.PointsMaterial({color: 0x343a40,size: 0.5});
+                material = new THREE.PointsMaterial({color: 'teal',size: 0.5});
                 mesh = new THREE.Points(dummy_mesh.geometry,material);
                 CloneMesh(dummy_mesh);
                 break;
             case 2:
-                material = new THREE.MeshBasicMaterial({ color: 0x343a40, wireframe: true });
+                material = new THREE.MeshBasicMaterial({ color: 'teal', wireframe: true });
                 mesh = new THREE.Mesh(dummy_mesh.geometry, material);
                 CloneMesh(dummy_mesh);
                 break;
             case 3:
                 if (!light)
-                    material = new THREE.MeshBasicMaterial({ color: 0x343a40 });
+                    material = new THREE.MeshBasicMaterial({ color: 'teal' });
                 else
-                    material = new THREE.MeshPhongMaterial({ color: 0x343a40 });
+                    material = new THREE.MeshPhongMaterial({ color: 'teal' });
                 mesh = new THREE.Mesh(dummy_mesh.geometry, material);
                 CloneMesh(dummy_mesh);
                 break;
@@ -171,20 +171,43 @@ function addMesh(id){
         case 6:
             mesh = new THREE.Mesh(TeapotG, material);
             break;
-        case 7:
-            mesh = loader.load("./models/pickels/scene.gltf", function (gltf) {
-                mesh.scale.set(100, 100, 100);
-            });
-            
+        case 7:{
+            const loader = new GLTFLoader();
+            loader.load('./js/deer.glb',function (gltf){
+                console.log(gltf);
 
-            
+                const model = gltf.scene;
+                model.traverse(function(child){
+                    //if (!child.isMesh) return;
+                    child.scale.set(
+                    child.scale.x * 0.2,
+                    child.scale.y * 0.2,
+                    child.scale.z * 0.2
+                    );
+                    geometry = child.geometry
+                });
+                mesh = new THREE.Mesh(geometry,material);
+                mesh.name = "mesh1";
+                scene.add(mesh);
+                control_transform(mesh);
+            });
+            const light_3d=new THREE.DirectionalLight(0xfffff,1);
+            light_3d.position.set(2,2,5);
+            scene.add(light_3d);
+            render();
+            animate();
+            break;
+            }
     }
+    if (id!=7) {
     mesh.name = "mesh1";
     mesh.castShadow = true;
     mesh.receiveShadow = true;
     scene.add(mesh);
     control_transform(mesh);
     render();
+    } 
+ 
 }
 window.addMesh = addMesh;
 
@@ -349,6 +372,15 @@ function SetTexture(url) {
 }
 window.SetTexture = SetTexture;
 
+function SetTexture_1() {
+    mesh = scene.getObjectByName("mesh1");
+    if (mesh) {
+        texture = new THREE.TextureLoader().load('./img/texture.jpeg', render);
+        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        SetMaterial(4);
+    }
+}
+window.SetTexture_1 = SetTexture_1;
 
 
 var mesh = new THREE.Mesh();

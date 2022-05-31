@@ -32,7 +32,7 @@
                         <li><a href="#" onclick="addMesh(4);">Cylinder</a></li>
                         <li><a href="#" onclick="addMesh(5);">Torus</a></li>
                         <li><a href="#" onclick="addMesh(6);">Teapot</a></li>
-                        <li><a href="#" onclick="addMesh(7);">Pickles</a></li>
+                        <li><a href="#" onclick="addMesh(7);">Deer</a></li>
 
 
                         
@@ -40,16 +40,24 @@
                 </li>
                 <li>
                     <a href="#" class="serv-btn">Surface
-                        <span class="fas fa-caret-down second"><span>
+                        <span class="fas fa-caret-down second"></span>
                     </a>
                     <ul class="serv-show">
                         <li><a href="#" onclick="SetMaterial(1);">Point</a></li>
                         <li><a href="#" onclick="SetMaterial(2);">Line</a></li>
                         <li><a href="#" onclick="SetMaterial(3);">Solid</a></li>
                         <li>
-                            <input type="file" accept="image/*" id="texture" style="display: none;"
-                                onchange="SetTexture(window.URL.createObjectURL(this.files[0]))" />
-                            <a href="#" name="button" onclick="Uploadimage();">Texture</a>
+                            <a href="#" class="text-btn">Texture
+                                <span class="fas fa-caret-down fifth "></span>
+                            </a>
+                            <ul class="text-show">
+                                <li>
+                                    <input type="file" accept="image/*" id="texture" style="display: none;"
+                                        onchange="SetTexture(window.URL.createObjectURL(this.files[0]))" />
+                                    <a href="#" name="button" onclick="Uploadimage();">Upload Image</a>
+                                </li>
+                                <li><a href="#" onclick="SetTexture_1();">Default</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -93,49 +101,27 @@
 
                         </button>
                 </li>
-
-
-                
-
-                <li>
-                    <div class="card-item">
-                        <span class="valueSpanFOV">Field of view: 75</span>
-                        <input type="range" class="custom-range" id="customFOV" min="0" max="180" value="75">
-                    </div>
-                    <div class="card-item">
-                        <span class="valueSpanNear">Near: 0.1</span>
-                        <input type="range" class="custom-range" id="customNear" min="0.1" max="100" value="0.1">
-                    </div>
-                    <div class="card-item">
-                        <span class="valueSpanFar">Far: 1000</span>
-                        <input type="range" class="custom-range" id="customFar" min="200" max="2000" value="1000">
-                    </div>
-                </li>
-
-
-
-
         </ul>   
     </nav>
     <div id="webgl"></div>
     <div class="ctrlpannel">
-            <!-- <div class="card-header">Control Panel</div>
-            <div class="card-body">
-                <div class="card-item">
-                    <span class="valueSpanFOV">Field of view: 75</span>
-                    <input type="range" class="custom-range" id="customFOV" min="0" max="180" value="75">
-                </div>
-                
-                <div class="card-item">
-                    <span class="valueSpanNear">Near: 0.1</span>
-                    <input type="range" class="custom-range" id="customNear" min="0.1" max="100" value="0.1">
-                </div>
-                
-                <div class="card-item">
-                    <span class="valueSpanFar">Far: 1000</span>
-                    <input type="range" class="custom-range" id="customFar" min="200" max="2000" value="1000">
-                </div>
-            </div> -->
+        <div class="card-header">Control Panel</div>
+        <div class="card-body">
+            <div class="card-item">
+                <span class="valueSpanFOV">Field of view: 75</span>
+                <input type="range" class="custom-range" id="customFOV" min="0" max="180" value="75">
+            </div>
+    
+            <div class="card-item">
+                <span class="valueSpanNear">Near: 0.1</span>
+                <input type="range" class="custom-range" id="customNear" min="0.1" max="100" value="0.1">
+            </div>
+    
+            <div class="card-item">
+                <span class="valueSpanFar">Far: 1000</span>
+                <input type="range" class="custom-range" id="customFar" min="200" max="2000" value="1000">
+            </div>
+        </div>
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -193,8 +179,13 @@
             $('nav ul .animation-show').toggleClass("show3");
             $('nav ul .four').toggleClass("rotate");
         });
+        $('.text-btn').click(function () {
+            $('nav ul li ul .text-show').toggleClass("show4");
+            $('nav ul .fifth').toggleClass("rotate");
+        });
         $('nav ul li').click(function () {
             $(this).addClass("active").siblings().removeClass("active");});
+
 
     </script>
 </body>
