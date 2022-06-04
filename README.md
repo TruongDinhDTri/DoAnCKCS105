@@ -13,9 +13,12 @@
 
 ## Thành viên
 
-| STT | MSSV       |Họ và tên       | Email                |Github                                   |
-| ----|:----------:|----------------|----------------------|-----------------------------------------|
-| 1   | 19521622   | Nguyễn Quan Huy|19521622@gm.uit.edu.vn|[nqhuy2509](https://github.com/nqhuy2509)|
+| STT | MSSV     | Họ và tên           | Email                  | Github                                              |
+|-----|----------|---------------------|------------------------|-----------------------------------------------------|
+| 1   | 19522395 | Trương Đình Đức Trí | 19522395@gm.uit.edu.vn | [TruongDinhDTri](https://github.com/TruongDinhDTri) |
+| 2   | 19522351 | Trần Trung Tín      | 19522351@gm.uit.edu.vn  | [TTTin239](https://github.com/TTTin239)             |
+| 3   | 19522274 | Hồ Thịnh            | 19522274@gm.uit.edu.vn | [bou24-1](https://github.com/bou24-1)               |
+| 4   | 19522295 | Trương Thị Kim Thoa | 19522295@gm.uit.edu.vn | [kimthoa1652001](https://github.com/kimthoa1652001) |
 
 ## Thông tin đồ án
 
@@ -27,7 +30,5 @@
     - B3: Chạy file index.html bằng browser(ví dụ live server của VSCode)
     - B4: Mở trình duyệt và thao tác trên trình duyệt
 
-* **Link github repository:** [link](https://github.com/nqhuy2509/DoanCKCS105)
-* **Link video demo:** [link](https://drive.google.com/file/d/1VAK-DcYg8tf7gHbkm1B6zGgsYWm7zYZA/view?usp=sharing)
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © Nguyễn Quan Huy`
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © Truong Dinh Duc Tri`
