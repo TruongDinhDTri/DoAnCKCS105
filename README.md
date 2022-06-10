@@ -27,7 +27,7 @@
 * ***Các bước chạy chương trình***:
     - B1: Tải và giải nén thư mục
     - B2: Mở folder trên IDE (ví dụ VSCode)
-    - B3: Chạy file index.html bằng browser(ví dụ live server của VSCode)
+    - B3: Chạy file index.html bằng browser(ví dụ: Dùng extension "Live server" của VSCode)
     - B4: Mở trình duyệt và thao tác trên trình duyệt
 
 
