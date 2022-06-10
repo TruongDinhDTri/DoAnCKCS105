@@ -29,6 +29,7 @@
     - B2: Mở folder trên IDE (ví dụ VSCode)
     - B3: Chạy file index.html bằng browser(ví dụ: Dùng extension "Live server" của VSCode)
     - B4: Mở trình duyệt và thao tác trên trình duyệt
+* ***Link Video Demo: [Demo](https://drive.google.com/file/d/1w8rYhbQu07M-ereKvvXMSk5gvrZq5Cfs/view)
 
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © Truong Dinh Duc Tri`
